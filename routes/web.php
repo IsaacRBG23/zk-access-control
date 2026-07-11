@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +9,26 @@ Route::inertia('/', 'Welcome')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+
+
+    Route::middleware('permission:permissions.view')->group(function () {
+        Route::get('permissions', [PermissionController::class, 'index'])->name('permissions.index');
+    });
+
+    Route::middleware('permission:permissions.create')->group(function () {
+        Route::get('permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
+        Route::post('permissions', [PermissionController::class, 'store'])->name('permissions.store');
+    });
+
+    Route::middleware('permission:permissions.update')->group(function () {
+        Route::get('permissions/{permission}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
+        Route::put('permissions/{permission}', [PermissionController::class, 'update'])->name('permissions.update');
+    });
+
+    Route::delete('permissions/{permission}', [PermissionController::class, 'destroy'])
+        ->middleware('permission:permissions.delete')
+        ->name('permissions.destroy');
+
 
     Route::middleware('permission:users.view')->group(function () {
         Route::get('users', [UserController::class, 'index'])->name('users.index');
