@@ -16,9 +16,9 @@ class Role extends Model
         'name',
     ];
 
-    /**
-     * Get the users assigned to this role.
-     */
+/**
+ * @return BelongsToMany<User, $this>
+ */
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(
@@ -29,9 +29,9 @@ class Role extends Model
         )->withTimestamps();
     }
 
-    /**
-     * Get the permissions assigned to this role.
-     */
+/**
+ * @return BelongsToMany<Permission, $this>
+ */
     public function permissions(): BelongsToMany
     {
         return $this->belongsToMany(

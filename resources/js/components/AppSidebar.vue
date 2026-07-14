@@ -19,10 +19,10 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { dashboard } from '@/routes';
 import permissions from '@/routes/permissions';
 import roles from '@/routes/roles';
 import users from '@/routes/users';
-import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 
 const page = usePage();

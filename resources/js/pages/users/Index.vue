@@ -171,8 +171,9 @@ const deleteUser = (user: User): void => {
                     :href="link.url"
                     class="rounded-md border px-3 py-1.5 text-sm"
                     :class="{ 'bg-primary text-primary-foreground': link.active }"
-                    v-html="link.label"
-                />
+                >
+                    <span v-html="link.label" />
+                </Link>
 
                 <span
                     v-else

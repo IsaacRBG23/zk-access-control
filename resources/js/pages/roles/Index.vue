@@ -127,17 +127,18 @@ const deleteRole = (role: Role): void => {
         </div>
 
         <div class="flex flex-wrap gap-2">
-            <Link
-                v-for="link in roles.links"
-                :key="link.label"
-                :href="link.url ?? '#'"
-                class="rounded-md border px-3 py-1 text-sm"
-                :class="{
-                    'bg-primary text-primary-foreground': link.active,
-                    'pointer-events-none opacity-50': !link.url,
-                }"
-                v-html="link.label"
-            />
+                <Link
+                    v-for="link in roles.links"
+                    :key="link.label"
+                    :href="link.url ?? '#'"
+                    class="rounded-md border px-3 py-1 text-sm"
+                    :class="{
+                        'bg-primary text-primary-foreground': link.active,
+                        'pointer-events-none opacity-50': !link.url,
+                    }"
+                >
+                    <span v-html="link.label" />
+                </Link>
         </div>
     </div>
 </template>
