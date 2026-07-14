@@ -23,11 +23,11 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Users',
+                title: 'Usuarios',
                 href: '/users',
             },
             {
-                title: 'Edit user',
+                title: 'Editar usuario',
                 href: '/users',
             },
         ],
@@ -49,13 +49,13 @@ const submit = (): void => {
 </script>
 
 <template>
-    <Head title="Edit user" />
+    <Head title="Editar usuario" />
 
     <div class="flex h-full flex-1 flex-col gap-6 rounded-xl p-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Edit user</h1>
+            <h1 class="text-2xl font-semibold tracking-tight">Editar usuario</h1>
             <p class="text-sm text-muted-foreground">
-                Update user information and assigned roles.
+                Actualizar la informacion y el rol del usuario
             </p>
         </div>
 
@@ -68,7 +68,7 @@ const submit = (): void => {
                     for="name"
                     class="text-sm font-medium"
                 >
-                    Name
+                    Nombre
                 </label>
 
                 <input
@@ -92,7 +92,7 @@ const submit = (): void => {
                     for="email"
                     class="text-sm font-medium"
                 >
-                    Email
+                    Correo
                 </label>
 
                 <input
@@ -117,7 +117,7 @@ const submit = (): void => {
                         for="password"
                         class="text-sm font-medium"
                     >
-                        New password
+                        Nueva contraseña
                     </label>
 
                     <input
@@ -129,7 +129,7 @@ const submit = (): void => {
                     />
 
                     <p class="text-xs text-muted-foreground">
-                        Leave blank to keep the current password.
+                        Este espacio no puede permanecer en blanco
                     </p>
 
                     <p
@@ -145,7 +145,7 @@ const submit = (): void => {
                         for="password_confirmation"
                         class="text-sm font-medium"
                     >
-                        Confirm new password
+                        Confirmar la nueva contraseña
                     </label>
 
                     <input
@@ -163,7 +163,7 @@ const submit = (): void => {
                     for="role"
                     class="text-sm font-medium"
                 >
-                    Primary role
+                    Rol primario
                 </label>
 
                 <select
@@ -189,7 +189,7 @@ const submit = (): void => {
             </div>
 
             <div class="space-y-3">
-                <p class="text-sm font-medium">Assigned roles</p>
+                <p class="text-sm font-medium">Asignacion de rol</p>
 
                 <div class="grid gap-2 md:grid-cols-2">
                     <label
@@ -221,14 +221,14 @@ const submit = (): void => {
                     class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     :disabled="form.processing"
                 >
-                    Update user
+                    Actualizar usuario
                 </button>
 
                 <Link
                     href="/users"
                     class="rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted"
                 >
-                    Cancel
+                    Cancelar
                 </Link>
             </div>
         </form>

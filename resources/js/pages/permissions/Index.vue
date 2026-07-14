@@ -5,7 +5,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Permissions',
+                title: 'Permisos',
                 href: '/permissions',
             },
         ],
@@ -37,7 +37,7 @@ defineProps<{
 const deletePermission = (permission: Permission): void => {
     if (
         !confirm(
-            `Are you sure you want to delete the permission "${permission.name}"?`,
+            `Estas seguro que deseas borrar el siguiente permiso "${permission.name}"?`,
         )
     ) {
         return;
@@ -48,16 +48,16 @@ const deletePermission = (permission: Permission): void => {
 </script>
 
 <template>
-    <Head title="Permissions" />
+    <Head title="Permisos" />
 
     <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
         <div class="flex items-center justify-between">
             <div>
                 <h1 class="text-2xl font-semibold tracking-tight">
-                    Permissions
+                    Permisos
                 </h1>
                 <p class="text-sm text-muted-foreground">
-                    Manage the permissions available in the system.
+                  Control de permisos disponible en el sistema
                 </p>
             </div>
 
@@ -65,7 +65,7 @@ const deletePermission = (permission: Permission): void => {
                 href="/permissions/create"
                 class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-                Create permission
+                Nuevo permiso
             </Link>
         </div>
 
@@ -75,11 +75,11 @@ const deletePermission = (permission: Permission): void => {
             <table class="w-full text-sm">
                 <thead class="border-b bg-muted/50 text-left">
                     <tr>
-                        <th class="px-4 py-3 font-medium">Name</th>
-                        <th class="px-4 py-3 font-medium">Assigned roles</th>
-                        <th class="px-4 py-3 font-medium">Created at</th>
+                        <th class="px-4 py-3 font-medium">Nombre</th>
+                        <th class="px-4 py-3 font-medium">Roles asignados</th>
+                        <th class="px-4 py-3 font-medium">Creado</th>
                         <th class="px-4 py-3 text-right font-medium">
-                            Actions
+                            Acciones
                         </th>
                     </tr>
                 </thead>
@@ -108,7 +108,7 @@ const deletePermission = (permission: Permission): void => {
                                     :href="`/permissions/${permission.id}/edit`"
                                     class="rounded-md border px-3 py-1 text-sm hover:bg-muted"
                                 >
-                                    Edit
+                                    Editar
                                 </Link>
 
                                 <button
@@ -116,7 +116,7 @@ const deletePermission = (permission: Permission): void => {
                                     class="rounded-md border px-3 py-1 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-950"
                                     @click="deletePermission(permission)"
                                 >
-                                    Delete
+                                    Eliminar
                                 </button>
                             </div>
                         </td>
@@ -127,7 +127,7 @@ const deletePermission = (permission: Permission): void => {
                             colspan="4"
                             class="px-4 py-8 text-center text-muted-foreground"
                         >
-                            No permissions found.
+                           Permisos no encontrados
                         </td>
                     </tr>
                 </tbody>

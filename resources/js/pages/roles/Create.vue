@@ -9,7 +9,7 @@ defineOptions({
                 href: '/roles',
             },
             {
-                title: 'Create role',
+                title: 'Crear rol',
                 href: '/roles/create',
             },
         ],
@@ -45,13 +45,13 @@ const submit = (): void => {
 </script>
 
 <template>
-    <Head title="Create role" />
+    <Head title="Crear rol" />
 
     <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Create role</h1>
+            <h1 class="text-2xl font-semibold tracking-tight">Crear rol</h1>
             <p class="text-sm text-muted-foreground">
-                Create a new role and assign permissions to it.
+               Crea un nuevo rol y asígnale permisos.
             </p>
         </div>
 
@@ -60,13 +60,13 @@ const submit = (): void => {
             @submit.prevent="submit"
         >
             <div class="space-y-2">
-                <label for="name" class="text-sm font-medium">Name</label>
+                <label for="name" class="text-sm font-medium">Nombre</label>
                 <input
                     id="name"
                     v-model="form.name"
                     type="text"
                     class="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Example: Supervisor"
+                    placeholder="Ejemplo: Supervisor"
                 />
                 <p v-if="form.errors.name" class="text-sm text-red-600">
                     {{ form.errors.name }}
@@ -75,9 +75,9 @@ const submit = (): void => {
 
             <div class="space-y-3">
                 <div>
-                    <h2 class="text-sm font-medium">Permissions</h2>
+                    <h2 class="text-sm font-medium">Permisos</h2>
                     <p class="text-sm text-muted-foreground">
-                        Select the permissions assigned to this role.
+                       Selecciona el permiso asignado para este rol
                     </p>
                 </div>
 
@@ -107,14 +107,14 @@ const submit = (): void => {
                     class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     :disabled="form.processing"
                 >
-                    Create role
+                    Crear rol
                 </button>
 
                 <Link
                     href="/roles"
                     class="rounded-md border px-4 py-2 text-sm hover:bg-muted"
                 >
-                    Cancel
+                    Cancelar
                 </Link>
             </div>
         </form>

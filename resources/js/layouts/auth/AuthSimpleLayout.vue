@@ -23,9 +23,13 @@ defineProps<{
                         <div
                             class="mb-1 flex h-9 w-9 items-center justify-center rounded-md"
                         >
-                            <AppLogoIcon
-                                class="size-9 fill-current text-[var(--foreground)] dark:text-white"
+
+                            <img
+                                src="/images/zar-kruse-logo.jpg"
+                                alt="Logo de Zar-Kruse"
+                                class="h-full w-full scale-350 object-contain"
                             />
+
                         </div>
                         <span class="sr-only">{{ title }}</span>
                     </Link>
