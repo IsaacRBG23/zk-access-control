@@ -14,11 +14,11 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Users',
+                title: 'Usuarios',
                 href: '/users',
             },
             {
-                title: 'Create user',
+                title: 'Crear Usuario',
                 href: '/users/create',
             },
         ],
@@ -40,13 +40,13 @@ const submit = (): void => {
 </script>
 
 <template>
-    <Head title="Create user" />
+    <Head title="Crear usuario" />
 
     <div class="flex h-full flex-1 flex-col gap-6 rounded-xl p-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Create user</h1>
+            <h1 class="text-2xl font-semibold tracking-tight">Crear usuario</h1>
             <p class="text-sm text-muted-foreground">
-                Register a new user and assign application roles.
+              Registrar un nuevo usuario con su rol
             </p>
         </div>
 
@@ -59,7 +59,7 @@ const submit = (): void => {
                     for="name"
                     class="text-sm font-medium"
                 >
-                    Name
+                    Nombre
                 </label>
 
                 <input
@@ -83,7 +83,7 @@ const submit = (): void => {
                     for="email"
                     class="text-sm font-medium"
                 >
-                    Email
+                    Correo
                 </label>
 
                 <input
@@ -108,7 +108,7 @@ const submit = (): void => {
                         for="password"
                         class="text-sm font-medium"
                     >
-                        Password
+                        Contraseña
                     </label>
 
                     <input
@@ -132,7 +132,7 @@ const submit = (): void => {
                         for="password_confirmation"
                         class="text-sm font-medium"
                     >
-                        Confirm password
+                        Confirmar Contraseña
                     </label>
 
                     <input
@@ -150,7 +150,7 @@ const submit = (): void => {
                     for="role"
                     class="text-sm font-medium"
                 >
-                    Primary role
+                    Rol primario
                 </label>
 
                 <select
@@ -176,7 +176,7 @@ const submit = (): void => {
             </div>
 
             <div class="space-y-3">
-                <p class="text-sm font-medium">Assigned roles</p>
+                <p class="text-sm font-medium">Asignar roles</p>
 
                 <div class="grid gap-2 md:grid-cols-2">
                     <label
@@ -208,14 +208,14 @@ const submit = (): void => {
                     class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     :disabled="form.processing"
                 >
-                    Save user
+                    Guardar usuario
                 </button>
 
                 <Link
                     href="/users"
                     class="rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted"
                 >
-                    Cancel
+                    Cancelar
                 </Link>
             </div>
         </form>

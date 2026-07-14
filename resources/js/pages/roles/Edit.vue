@@ -5,11 +5,11 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Roles',
+                title: 'Rol',
                 href: '/roles',
             },
             {
-                title: 'Edit role',
+                title: 'Editar rol',
                 href: '/roles',
             },
         ],
@@ -52,13 +52,13 @@ const submit = (): void => {
 </script>
 
 <template>
-    <Head title="Edit role" />
+    <Head title="Editar rol" />
 
     <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Edit role</h1>
+            <h1 class="text-2xl font-semibold tracking-tight">Editar rol</h1>
             <p class="text-sm text-muted-foreground">
-                Update role information and assigned permissions.
+                Actualice la información del rol y los permisos asignados
             </p>
         </div>
 
@@ -67,7 +67,7 @@ const submit = (): void => {
             @submit.prevent="submit"
         >
             <div class="space-y-2">
-                <label for="name" class="text-sm font-medium">Name</label>
+                <label for="name" class="text-sm font-medium">Nombre</label>
                 <input
                     id="name"
                     v-model="form.name"
@@ -81,9 +81,9 @@ const submit = (): void => {
 
             <div class="space-y-3">
                 <div>
-                    <h2 class="text-sm font-medium">Permissions</h2>
+                    <h2 class="text-sm font-medium">Permisos</h2>
                     <p class="text-sm text-muted-foreground">
-                        Select the permissions assigned to this role.
+                        Selecciona los permisos asignados al rol
                     </p>
                 </div>
 
@@ -113,14 +113,14 @@ const submit = (): void => {
                     class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     :disabled="form.processing"
                 >
-                    Update role
+                    Actualizar rol
                 </button>
 
                 <Link
                     href="/roles"
                     class="rounded-md border px-4 py-2 text-sm hover:bg-muted"
                 >
-                    Cancel
+                    Cancelar
                 </Link>
             </div>
         </form>

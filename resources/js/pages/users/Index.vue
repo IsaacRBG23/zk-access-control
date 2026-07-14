@@ -34,7 +34,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Users',
+                title: 'Usuarios',
                 href: '/users',
             },
         ],
@@ -42,7 +42,7 @@ defineOptions({
 });
 
 const deleteUser = (user: User): void => {
-    if (!confirm(`Delete user "${user.name}"? This action cannot be undone.`)) {
+    if (!confirm(`Desea eliminar el usuario "${user.name}"? Esta accion no se puede deshacer.`)) {
         return;
     }
 
@@ -51,14 +51,14 @@ const deleteUser = (user: User): void => {
 </script>
 
 <template>
-    <Head title="Users" />
+    <Head title="Usuarios" />
 
     <div class="flex h-full flex-1 flex-col gap-6 overflow-x-auto rounded-xl p-4">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-                <h1 class="text-2xl font-semibold tracking-tight">Users</h1>
+                <h1 class="text-2xl font-semibold tracking-tight">Usuarios</h1>
                 <p class="text-sm text-muted-foreground">
-                    Manage application users and assign their roles.
+                    Administre los usuarios de la aplicación y asigne sus roles
                 </p>
             </div>
 
@@ -66,7 +66,7 @@ const deleteUser = (user: User): void => {
                 href="/users/create"
                 class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
             >
-                Create user
+                Nuevo Usuario
             </Link>
         </div>
 
@@ -74,12 +74,12 @@ const deleteUser = (user: User): void => {
             <table class="w-full text-left text-sm">
                 <thead class="border-b bg-muted/40">
                     <tr>
-                        <th class="px-4 py-3 font-medium">Name</th>
-                        <th class="px-4 py-3 font-medium">Email</th>
-                        <th class="px-4 py-3 font-medium">Primary role</th>
-                        <th class="px-4 py-3 font-medium">Assigned roles</th>
-                        <th class="px-4 py-3 font-medium">Created</th>
-                        <th class="px-4 py-3 text-right font-medium">Actions</th>
+                        <th class="px-4 py-3 font-medium">Nombre</th>
+                        <th class="px-4 py-3 font-medium">Correo</th>
+                        <th class="px-4 py-3 font-medium">Role primario</th>
+                        <th class="px-4 py-3 font-medium">Role Asignado</th>
+                        <th class="px-4 py-3 font-medium">Fec. Creacion</th>
+                        <th class="px-4 py-3 text-right font-medium">Acciones</th>
                     </tr>
                 </thead>
 
@@ -117,7 +117,7 @@ const deleteUser = (user: User): void => {
                                     v-if="user.roles.length === 0"
                                     class="text-xs text-muted-foreground"
                                 >
-                                    No roles assigned
+                                    Sin rol Asignado
                                 </span>
                             </div>
                         </td>
@@ -132,7 +132,7 @@ const deleteUser = (user: User): void => {
                                     :href="`/users/${user.id}/edit`"
                                     class="rounded-md border px-3 py-1.5 text-xs font-medium hover:bg-muted"
                                 >
-                                    Edit
+                                    Editar
                                 </Link>
 
                                 <button
@@ -140,7 +140,7 @@ const deleteUser = (user: User): void => {
                                     class="rounded-md border border-destructive/40 px-3 py-1.5 text-xs font-medium text-destructive hover:bg-destructive/10"
                                     @click="deleteUser(user)"
                                 >
-                                    Delete
+                                    Eliminar
                                 </button>
                             </div>
                         </td>
@@ -151,7 +151,7 @@ const deleteUser = (user: User): void => {
                             colspan="6"
                             class="px-4 py-8 text-center text-sm text-muted-foreground"
                         >
-                            No users found.
+                            No se encontraron Usuarios
                         </td>
                     </tr>
                 </tbody>

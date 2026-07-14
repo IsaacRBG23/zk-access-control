@@ -38,7 +38,7 @@ const hasPermission = (permission: string): boolean => {
 const mainNavItems = computed<NavItem[]>(() => {
     const items: NavItem[] = [
         {
-            title: 'Dashboard',
+            title: 'Panel de Control',
             href: dashboard(),
             icon: LayoutGrid,
         },
@@ -46,7 +46,7 @@ const mainNavItems = computed<NavItem[]>(() => {
 
     if (hasPermission('users.view')) {
         items.push({
-            title: 'Users',
+            title: 'Usuarios',
             href: users.index(),
             icon: Users,
         });
@@ -62,7 +62,7 @@ const mainNavItems = computed<NavItem[]>(() => {
 
     if (hasPermission('permissions.view')) {
         items.push({
-            title: 'Permissions',
+            title: 'Permisos',
             href: permissions.index(),
             icon: KeyRound,
         });

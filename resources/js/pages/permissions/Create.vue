@@ -5,11 +5,11 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Permissions',
+                title: 'Permisos',
                 href: '/permissions',
             },
             {
-                title: 'Create permission',
+                title: 'Crear permisos',
                 href: '/permissions/create',
             },
         ],
@@ -26,15 +26,15 @@ const submit = (): void => {
 </script>
 
 <template>
-    <Head title="Create permission" />
+    <Head title="Crear permiso" />
 
     <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
         <div>
             <h1 class="text-2xl font-semibold tracking-tight">
-                Create permission
+                Crear permiso
             </h1>
             <p class="text-sm text-muted-foreground">
-                Add a new permission to the access-control system.
+                Añade un nuevo permiso para zk-access-control
             </p>
         </div>
 
@@ -44,7 +44,7 @@ const submit = (): void => {
         >
             <div class="space-y-2">
                 <label for="name" class="text-sm font-medium">
-                    Permission name
+                    Nombre del permiso
                 </label>
 
                 <input
@@ -56,7 +56,7 @@ const submit = (): void => {
                 />
 
                 <p class="text-sm text-muted-foreground">
-                    Use the format resource.action, for example:
+                    Usa el formato recurso.accion, por ejemplo:
                     users.view.
                 </p>
 
@@ -71,14 +71,14 @@ const submit = (): void => {
                     class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     :disabled="form.processing"
                 >
-                    Create permission
+                    Crear permiso
                 </button>
 
                 <Link
                     href="/permissions"
                     class="rounded-md border px-4 py-2 text-sm hover:bg-muted"
                 >
-                    Cancel
+                    Cancelar
                 </Link>
             </div>
         </form>

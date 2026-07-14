@@ -21,7 +21,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Dashboard',
+                title: 'Panel de Control',
                 href: dashboard(),
             },
         ],
@@ -30,16 +30,15 @@ defineOptions({
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Panel principal" />
 
     <div class="flex h-full flex-1 flex-col gap-6 p-4">
         <section>
             <h1 class="text-2xl font-semibold tracking-tight">
-                Access Control Dashboard
+                Zar-Kruse-Access-Control
             </h1>
             <p class="mt-1 text-sm text-muted-foreground">
-                Overview of users, roles, and permissions configured in the
-                system.
+                Resumen de usuarios, roles y permisos configurados en el sistema.
             </p>
         </section>
 
@@ -50,7 +49,7 @@ defineOptions({
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-muted-foreground">
-                            Users
+                            Usuarios
                         </p>
                         <p class="mt-2 text-3xl font-bold">
                             {{ metrics.users }}
@@ -63,7 +62,7 @@ defineOptions({
                 </div>
 
                 <p class="mt-4 text-sm text-muted-foreground">
-                    Registered application users.
+                        Usuarios registrados
                 </p>
             </article>
 
@@ -86,7 +85,7 @@ defineOptions({
                 </div>
 
                 <p class="mt-4 text-sm text-muted-foreground">
-                    Roles available for access assignment.
+                    Roles disponibles para la asignacion de acceso
                 </p>
             </article>
 
@@ -96,7 +95,7 @@ defineOptions({
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-muted-foreground">
-                            Permissions
+                            Permisos
                         </p>
                         <p class="mt-2 text-3xl font-bold">
                             {{ metrics.permissions }}
@@ -109,7 +108,7 @@ defineOptions({
                 </div>
 
                 <p class="mt-4 text-sm text-muted-foreground">
-                    Permission rules available in the system.
+                    Permisos disponibles en el sistema
                 </p>
             </article>
         </section>
@@ -118,13 +117,12 @@ defineOptions({
             class="rounded-xl border border-sidebar-border/70 bg-card p-6 shadow-sm dark:border-sidebar-border"
         >
             <h2 class="text-lg font-semibold">
-                System overview
+                Descripcion General del sistema
             </h2>
 
             <p class="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-                ZK Access Control provides centralized user, role, and permission
-                management. Use the sidebar to administer access rules according
-                to the permissions assigned to your account.
+                    ZK es una aplicación web básica que permita realizar operaciones CRUD (Crear, Leer, Actualizar,
+                    Eliminar) para usuarios y manejar el login de usuarios con control de permisos.
             </p>
         </section>
     </div>

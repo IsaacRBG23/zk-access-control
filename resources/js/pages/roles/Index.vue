@@ -5,7 +5,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Roles',
+                title: 'Rol',
                 href: '/roles',
             },
         ],
@@ -36,7 +36,7 @@ defineProps<{
 }>();
 
 const deleteRole = (role: Role): void => {
-    if (!confirm(`Are you sure you want to delete the role "${role.name}"?`)) {
+    if (!confirm(`Estas seguro que deseas eliminar el siguiente rol "${role.name}"?`)) {
         return;
     }
 
@@ -52,7 +52,7 @@ const deleteRole = (role: Role): void => {
             <div>
                 <h1 class="text-2xl font-semibold tracking-tight">Roles</h1>
                 <p class="text-sm text-muted-foreground">
-                    Manage system roles and their assigned permissions.
+                    Administre los roles del sistema y los permisos asignados a ellos
                 </p>
             </div>
 
@@ -60,7 +60,7 @@ const deleteRole = (role: Role): void => {
                 href="/roles/create"
                 class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-                Create role
+               Nuevo rol
             </Link>
         </div>
 
@@ -68,11 +68,11 @@ const deleteRole = (role: Role): void => {
             <table class="w-full text-sm">
                 <thead class="border-b bg-muted/50 text-left">
                     <tr>
-                        <th class="px-4 py-3 font-medium">Name</th>
-                        <th class="px-4 py-3 font-medium">Users</th>
-                        <th class="px-4 py-3 font-medium">Permissions</th>
-                        <th class="px-4 py-3 font-medium">Created at</th>
-                        <th class="px-4 py-3 text-right font-medium">Actions</th>
+                        <th class="px-4 py-3 font-medium">Nombre</th>
+                        <th class="px-4 py-3 font-medium">Usuarios</th>
+                        <th class="px-4 py-3 font-medium">Permisos</th>
+                        <th class="px-4 py-3 font-medium">Creado</th>
+                        <th class="px-4 py-3 text-right font-medium">Acciones</th>
                     </tr>
                 </thead>
 
@@ -100,7 +100,7 @@ const deleteRole = (role: Role): void => {
                                     :href="`/roles/${role.id}/edit`"
                                     class="rounded-md border px-3 py-1 text-sm hover:bg-muted"
                                 >
-                                    Edit
+                                    Editar
                                 </Link>
 
                                 <button
@@ -108,7 +108,7 @@ const deleteRole = (role: Role): void => {
                                     class="rounded-md border px-3 py-1 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-950"
                                     @click="deleteRole(role)"
                                 >
-                                    Delete
+                                    Eliminar
                                 </button>
                             </div>
                         </td>
