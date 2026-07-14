@@ -33,9 +33,9 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * Get the roles assigned to this user.
-     */
+/**
+ * @return BelongsToMany<Role, $this>
+ */
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(

@@ -33,6 +33,7 @@ const form = useForm({
 const togglePermission = (permissionId: number): void => {
     if (form.permissions.includes(permissionId)) {
         form.permissions = form.permissions.filter((id) => id !== permissionId);
+
         return;
     }
 

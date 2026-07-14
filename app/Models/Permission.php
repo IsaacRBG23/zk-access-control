@@ -16,9 +16,9 @@ class Permission extends Model
         'name',
     ];
 
-    /**
-     * Get the roles assigned to this permission.
-     */
+  /**
+ * @return BelongsToMany<Role, $this>
+ */
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(

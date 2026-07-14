@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -40,17 +41,21 @@ public function share(Request $request): array
         'name' => config('app.name'),
         'auth' => [
             'user' => $request->user(),
-            'permissions' => fn (): array => $request->user()
-                ? $request->user()
-                    ->roles()
-                    ->with('permissions')
-                    ->get()
-                    ->flatMap(fn ($role) => $role->permissions)
-                    ->pluck('name')
-                    ->unique()
-                    ->values()
-                    ->all()
-                : [],
+'permissions' => fn (): array => $request->user()
+    ? $request->user()
+        ->roles()
+        ->with('permissions')
+        ->get()
+        ->flatMap(
+            static fn (Role $role): array => $role
+                ->permissions
+                ->pluck('name')
+                ->all(),
+        )
+        ->unique()
+        ->values()
+        ->all()
+    : [],
         ],
         'sidebarOpen' => ! $request->hasCookie('sidebar_state')
             || $request->cookie('sidebar_state') === 'true',

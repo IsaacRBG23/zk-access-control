@@ -122,7 +122,7 @@ class UserController extends Controller
             'You do not have permission to delete users.'
         );
 
-        if (request()->user()?->is($user)) {
+        if ($user->id === request()->user()->id) {
             return redirect()
                 ->route('users.index')
                 ->with('error', 'You cannot delete your own user account.');
@@ -135,20 +135,19 @@ class UserController extends Controller
             ->with('success', 'User deleted successfully.');
     }
 
-    /**
-     * Get available role options.
-     *
-     * @return array<int, array{id: int, name: string}>
-     */
-    private function roleOptions(): array
-    {
-        return Role::query()
-            ->orderBy('name')
-            ->get(['id', 'name'])
-            ->map(fn (Role $role) => [
-                'id' => $role->id,
-                'name' => $role->name,
-            ])
-            ->all();
-    }
+        /**
+         * @return array<int, array{id: int, name: string}>
+         */
+        private function roleOptions(): array
+        {
+            return Role::query()
+                ->select(['id', 'name'])
+                ->orderBy('name')
+                ->get()
+                ->map(static fn (Role $role): array => [
+                    'id' => $role->id,
+                    'name' => $role->name,
+                ])
+                ->all();
+        }
 }

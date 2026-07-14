@@ -144,8 +144,9 @@ const deletePermission = (permission: Permission): void => {
                     'bg-primary text-primary-foreground': link.active,
                     'pointer-events-none opacity-50': !link.url,
                 }"
-                v-html="link.label"
-            />
+            >
+                <span v-html="link.label" />
+            </Link>
         </div>
     </div>
 </template>
